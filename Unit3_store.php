@@ -1,5 +1,5 @@
-<?php include 'Unit2_header.php';?>
-<?php include 'Unit2_database.php';?>
+<?php include 'Unit3_header.php';?>
+<?php include 'Unit3_database.php';?>
 <?php date_default_timezone_set("America/Denver");?>
 
 
@@ -9,7 +9,7 @@
 	<title>PHP Store</title>
 	<meta charset="UTF-8">
 	<meta name="author" content="Lauren Champlin">
-	<link rel="stylesheet" href="Unit2_store.css">
+	<link rel="stylesheet" href="Unit3_store.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -70,7 +70,7 @@
 </body>
 </html>
 
- <?php include 'Unit2_footer.php';?>
+ <?php include 'Unit3_footer.php';?>
 
 <script>
         function showImage() {

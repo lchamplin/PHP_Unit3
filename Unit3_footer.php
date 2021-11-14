@@ -7,7 +7,7 @@
 	<title>PHP Footer</title>
 	<meta charset="UTF-8">
 	<meta name="author" content="Lauren Champlin">
-	<link rel="stylesheet" href="Unit2_common.css">
+	<link rel="stylesheet" href="Unit3_common.css">
 	
 </head>
 <footer id="footer">

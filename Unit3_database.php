@@ -4,7 +4,7 @@ ini_set('display_errors', True);
 ?>
 <?php
 function getConnection(){
-include "Unit2_database_credentials.php";
+include "Unit3_database_credentials.php";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
