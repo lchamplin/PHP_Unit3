@@ -9,7 +9,7 @@
 	<title>PHP Store</title>
 	<meta charset="UTF-8">
 	<meta name="author" content="Lauren Champlin">
-	<link rel="stylesheet" href="Unit3_store.css">
+	<link rel="stylesheet" href="Unit3_order_entry.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -34,7 +34,7 @@
     <legend>Product</legend>
                 <br>
       
-                <select id="product" name="product" required onchange="showstock()">
+                <select id="product" name="product" required onchange="showStock()">
                         <option disabled selected hidden>Choose a product *</option>
                         <?php $Product = getProducts(getConnection()); ?>
                         <?php if ($Product): ?>
@@ -43,6 +43,7 @@
                         <?php endforeach?>
                         <?php endif?>
                         </select>
+                        <br>
                 Available: <input id="stock" type="text" name="stock" readonly>
 
                 <br>
