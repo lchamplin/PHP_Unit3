@@ -39,7 +39,7 @@
                         <?php $Product = getProducts(getConnection()); ?>
                         <?php if ($Product): ?>
                         <?php foreach($Product as $row): ?>
-                                <option value = <?= $row['id']?> data-id="<?= $row['id'] ?>" data-image="<?= $row['image_name'] ?>" data-qty="<?= $row['in_stock'] ?>" > <?= $row['product_name'] ?> - <?= $row['price'] ?> </option>
+                                <option value = <?= $row['id']?> data-image="<?= $row['image_name'] ?>" data-qty="<?= $row['in_stock'] ?>" > <?= $row['product_name'] ?> - <?= $row['price'] ?> </option>
                         <?php endforeach?>
                         <?php endif?>
                         </select>
@@ -67,7 +67,7 @@
 <script>
         $(document).ready(function() {
                 $("#stock").change(function(){
-                        var id = $("product option:selected").attr('data-id');
+                        var id = $("product").val();
                         console.log(id);
                         showStock(id);
                 })
