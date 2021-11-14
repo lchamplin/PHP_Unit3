@@ -34,7 +34,7 @@
     <legend>Product</legend>
                 <br>
       
-                <select id="product" name="product" required onchange="showStock()">
+                <select id="product" name="product" required onchange="showStock(this.value)">
                         <option disabled selected hidden>Choose a product *</option>
                         <?php $Product = getProducts(getConnection()); ?>
                         <?php if ($Product): ?>
@@ -66,12 +66,6 @@
 
 <script>
 
-        $(document).ready(function() {
-                $("#stock").change(function(){
-                        var id = $("#product option:selected").attr('data-id');
-                        showStock(id);
-                })
-        })
         function showStock(str) {
                 console.log(str);
                 if(str==""){
