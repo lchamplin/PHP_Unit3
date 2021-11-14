@@ -111,7 +111,7 @@ function updateQuantity($conn, $productId, $qty) {
 function getQuantity($conn, $productId) {
         $query = "select quantity from Product where id =?";
         $stmt = $conn->prepare( $query );
-        $stmt->bind_param("i", $productId);
+        $stmt->bind_param("i", intval($productId));
         $stmt->execute();
         $stmt->close();
 }
