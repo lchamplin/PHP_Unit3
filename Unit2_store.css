@@ -1,0 +1,61 @@
+
+div.personal, div.product { 
+        border-radius: 2px;
+        display: inline;
+        padding-top: 5px;
+        width: fit-content;
+        display: block;
+        margin: 2px;
+}
+
+fieldset.personal, fieldset.product{
+        background-color: gold;
+        border: 0.25vw red dashed;
+        width: fit-content;
+}
+
+
+legend {
+        background-color: red;
+        color: blue;
+        padding: 3px 6px;
+}
+
+
+.picture{
+        float: right;
+        display: inline;
+        width: 100%;
+        height: fit-content;
+        background-color: pink;
+        padding: 5px;
+        border: 0.25vw blue dashed;
+}
+
+img{
+        height: inherit;
+        width: inherit;
+        margin: 2px;
+}
+
+body {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        /* grid-template-rows: 5vw 15vw 5vw; */
+        grid-gap: 1em;
+      }
+      
+header,
+footer {
+        grid-column: 1 / span 5;
+      }
+      
+form {
+        grid-column: 1 / span 3;
+      }
+      
+picture {
+        grid-column: 3 / span 2;
+      }
+
+

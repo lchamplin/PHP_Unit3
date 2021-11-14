@@ -1,0 +1,57 @@
+header {
+        color: hotpink;
+        font-family: 'Franklin Gothic Medium';
+        font-size: 1.5vw;
+        background-color: blue;
+        border: 0.25vw red solid;
+        text-align: center;
+        justify-content: center;
+}
+
+footer{
+        color: gold;
+        font-family: 'Franklin Gothic Medium';
+        font-size: 1vw;
+        background-color: blue;
+        border: 0.25vw red solid;
+        text-align: center;
+        justify-content: center;
+}
+
+a{
+        color: gold;
+}
+
+.topnav {
+        background-color: gold;
+        width: 100%;
+        align-content: flex-start;
+        height: fit-content;
+}
+
+.topnav a {
+        float: left;
+        display: block;
+        color: hotpink;
+        background-color: inherit;
+        text-align: center;
+        font-size: 15px;
+        text-decoration: none;
+        padding: 14px 16px;
+}
+      
+.topnav a:hover {
+        background-color: goldenrod;
+}
+      
+.topnav a.active {
+        color: white;
+}
+
+
+#receipt{
+        background-color: gold;
+        border: 0.25vw red dashed;
+        width: fit-content;    
+        padding: 2px;  
+}
