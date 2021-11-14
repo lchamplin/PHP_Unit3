@@ -114,7 +114,10 @@ function getQuantity($conn, $productId) {
         $stmt->bind_param("i", intval($productId));
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result;
+        if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                return $row;
+        }
 }
 
 function getCustomerTable($conn) {
