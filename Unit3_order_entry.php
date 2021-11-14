@@ -72,6 +72,7 @@
                 })
         })
         function showStock(str) {
+                console.log("show stock");
                 if(str){
                         const xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function() {
