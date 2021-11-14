@@ -72,15 +72,19 @@
                 })
         })
         function showStock(str) {
-                console.log("show stock");
-                const xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {                                
-                if (this.readyState == 4 && this.status == 200){
-                                console.log(this.responseText);
-                                return this.responseText;
-                        }
-                };
-                xhttp.open("GET", "Unit3_get_quantity.php?id="+str, true);
-                xhttp.send();
+                if(str==""){
+                        return;
+                }
+                else{
+                        console.log("show stock");
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {                                
+                        if (this.readyState == 4 && this.status == 200){
+                                document.getElementById("stock").innerHTML = this.responseText;
+                                }
+                        };
+                        xhttp.open("GET", "Unit3_get_quantity.php?id="+str, true);
+                        xhttp.send();
+                }
         }
 </script>
