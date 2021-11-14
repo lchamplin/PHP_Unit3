@@ -108,6 +108,14 @@ function updateQuantity($conn, $productId, $qty) {
         $stmt->close();
 }
 
+function getQuantity($conn, $productId) {
+        $query = "select quantity from Product where id =?";
+        $stmt = $conn->prepare( $query );
+        $stmt->bind_param("i", $productId);
+        $stmt->execute();
+        $stmt->close();
+}
+
 function getCustomerTable($conn) {
         $query = "select * from Customer";
         $stmt = $conn->prepare( $query );

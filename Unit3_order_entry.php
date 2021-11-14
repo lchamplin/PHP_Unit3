@@ -39,13 +39,12 @@
                         <?php $Product = getProducts(getConnection()); ?>
                         <?php if ($Product): ?>
                         <?php foreach($Product as $row): ?>
-                                <option value = <?= $row['id']?> data-image="<?= $row['image_name'] ?>" data-qty="<?= $row['in_stock'] ?>" > <?= $row['product_name'] ?> - <?= $row['price'] ?> </option>
+                                <option value = <?= $row['id']?> data-id="<?= $row['id'] ?>" data-image="<?= $row['image_name'] ?>" data-qty="<?= $row['in_stock'] ?>" > <?= $row['product_name'] ?> - <?= $row['price'] ?> </option>
                         <?php endforeach?>
                         <?php endif?>
                         </select>
                         <br>
                 Available: <input id="stock" type="text" name="stock" readonly>
-
                 <br>
                 Quantity: * <input type="number" name="quantity" min=1 max=100  value=1 required><br>
 </fieldset>
@@ -59,45 +58,30 @@
 </span>
 
 </form>
-<div class="picture">
-        <p id="pic_text">Select a product to see it here</p>
-        <img id="picture">
-        <p id="stock_text"></p>
 
-</div>
 </body>
 </html>
 
  <?php include 'Unit3_footer.php';?>
 
 <script>
-        function showImage() {
-                var imgName = $("#product option:selected").attr('data-image');
-                var stock = $("#product option:selected").attr('data-qty');
-                $('#stock').text(stock+" left in stock")
-                console.log(imgName, stock);
-                $('#picture').attr("src", "images/"+imgName.toString());
-                if (stock == 0){
-                        $('#stock_text').text("OUT OF STOCK");
-                        $('#stock_text').css('color', 'red');
-                        $('#submit').prop("disabled",true);
+        $(document).ready(function() {
+                $("#stock").change(function(){
+                        var id = $("product option:selected").attr('data-id');
+                        showStock(id)
+                })
+        })
+        function showStock(str) {
+                if(str){
+                        const xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                                if (this.readyState == 4 && this.status == 200){
+                                        document.getElementById("stock").innerHTML = this.responseText;
+                                }
+                        };
+                        xhttp.open("GET", "Unit3_get_quantity.php?id="+str, true);
+                        xhttp.send();
+
                 }
-                else if (stock < 5){
-                        $('#stock_text').text("Only "+stock+" left in stock!");
-                        $('#stock_text').css('color', 'blue');
-                        $('#submit').prop("disabled",false);
-                }
-                else{
-                        $('#stock_text').text("");
-                        $('#submit').prop("disabled",false);
-                        }
-        }
-        function showStock() {
-                const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {
-                        document.getElementById("stock").innerHTML = this.responseText;
-                }
-                xhttp.open("GET", $("#product option:selected").attr('data-qty'));
-                xhttp.send();
         }
 </script>
