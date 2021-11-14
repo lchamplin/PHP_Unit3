@@ -72,7 +72,6 @@
                 })
         })
         function showStock(str) {
-                if(str){
                         console.log("show stock");
                         const xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function() {
@@ -83,6 +82,5 @@
                         };
                         xhttp.open("GET", "Unit3_get_quantity.php?id="+str, true);
                         xhttp.send();
-                }
         }
 </script>
