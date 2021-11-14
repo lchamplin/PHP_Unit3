@@ -68,7 +68,8 @@
         $(document).ready(function() {
                 $("#stock").change(function(){
                         var id = $("product option:selected").attr('data-id');
-                        $("#stock").val(showStock(id));
+                        console.log(id);
+                        showStock(id);
                 })
         })
         function showStock(str) {
