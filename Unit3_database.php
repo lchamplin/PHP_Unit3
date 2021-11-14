@@ -113,7 +113,8 @@ function getQuantity($conn, $productId) {
         $stmt = $conn->prepare( $query );
         $stmt->bind_param("i", intval($productId));
         $stmt->execute();
-        $stmt->close();
+        $result = $stmt->get_result();
+        return $result;
 }
 
 function getCustomerTable($conn) {
