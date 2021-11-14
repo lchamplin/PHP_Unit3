@@ -5,6 +5,5 @@
 
 $conn = getConnection();
 $id = $_GET["id"];
-echo $id;
 echo getQuantity($conn, $id);
 ?>
