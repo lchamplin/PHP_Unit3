@@ -67,12 +67,12 @@
 <script>
         $(document).ready(function() {
                 $("#stock").change(function(){
-                        var id = $("product").val();
-                        console.log(id);
+                        var id = $("#product").val();
                         showStock(id);
                 })
         })
         function showStock(str) {
+                console.log(str);
                 if(str==""){
                         return;
                 }
