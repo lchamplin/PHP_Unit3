@@ -15,7 +15,7 @@
 
 </head>
 <body>
-
+<div id='left'>
 <form action="Unit3_process_order.php" method="post">
         <span>
         <br>
@@ -58,6 +58,41 @@
 </span>
 
 </form>
+</div>
+
+<div id='right'>
+<?php
+$conn = getConnection();
+$customers = getCustomerTable($conn);
+$orders = getOrdersTable($conn);
+$products = getProductTable($conn);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<h3> Customers </h3>";
+echo "<table border='1'>
+<tr>
+<th>First name</th>
+<th>Last name</th>
+<th>Email</th>
+</tr>";
+
+while($row = mysqli_fetch_array($customers))
+{
+echo "<tr>";
+echo "<td>" . $row['first_name'] . "</td>";
+echo "<td>" . $row['last_name'] . "</td>";
+echo "<td>" . $row['email'] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
+
+echo "<br>";
+?>
+</div>
+
+
 
 </body>
 </html>
@@ -67,7 +102,6 @@
 <script>
 
         function showStock(str) {
-                console.log(str);
                 if(str==""){
                         return;
                 }
@@ -75,7 +109,6 @@
                         var xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function() {                                
                         if (this.readyState == 4 && this.status == 200){
-                                console.log(this.responseText);
                                 document.getElementById("stock").value = this.responseText;
                                 }
                         };
