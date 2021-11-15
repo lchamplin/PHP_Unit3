@@ -5,5 +5,5 @@
 
 $conn = getConnection();
 $id = $_GET["id"];
-echo getQuantity($conn, $id);
+echo getQuantity($conn, $id)['in_stock'];
 ?>
