@@ -23,13 +23,6 @@ $result = mysqli_query($conn, $sql);
 return $result;
 }
 
-function debug_to_console($data) {
-	$output = $data;
-	if (is_array($output))
-		$output = implode(',', $output);
-	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
-
 function findProductById($conn, $productId) {
         $query = "select * from Product where id = ?";
         $stmt = $conn->prepare( $query );
@@ -121,7 +114,6 @@ function getQuantity($conn, $productId) {
         $stmt->bind_param("i", intval($productId));
         $stmt->execute();
         $result = $stmt->get_result();
-        debug_to_console($result)
         return $result;
 }
 
