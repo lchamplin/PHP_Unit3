@@ -113,8 +113,14 @@ function getQuantity($conn, $productId) {
         $stmt = $conn->prepare( $query );
         $stmt->bind_param("i", intval($productId));
         $stmt->execute();
-        $result = $stmt->get_result();
-        return $result;
+        $result = $stmt->get_result(); // get the mysqli result
+        if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                return $row['in_stock'];
+        }
+        else {
+                return 0;
+        }
 }
 
 function getCustomerTable($conn) {
