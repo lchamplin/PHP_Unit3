@@ -63,7 +63,7 @@ picture {
 }
 
 #left {
-        width: 50%;
+        /* width: 50%; */
         align-content: flex-start;
         align-items: flex-start;
         height: 420px;
