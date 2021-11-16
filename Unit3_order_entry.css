@@ -37,11 +37,11 @@ img{
         width: inherit;
         margin: 2px;
 }
-
+/* 
 body {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        /* grid-template-rows: 5vw 15vw 5vw; */
+        grid-template-rows: 5vw 15vw 5vw; 
         grid-gap: 1em;
       }
       
@@ -56,7 +56,7 @@ form {
       
 picture {
         grid-column: 3 / span 2;
-      }
+      } */
 
 #clear{
         background-color: red;
