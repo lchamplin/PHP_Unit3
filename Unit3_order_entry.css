@@ -6,12 +6,14 @@ div.personal, div.product {
         width: fit-content;
         display: block;
         margin: 2px;
+        left:0;
 }
 
 fieldset.personal, fieldset.product{
         background-color: gold;
         border: 0.25vw red dashed;
         width: fit-content;
+        left: 0;
 }
 
 
@@ -64,11 +66,10 @@ picture {
 
 #left {
         /* width: 50%; */
-        align-content: flex-start;
-        align-items: flex-start;
         height: 420px;
         float: left;
         left: 0;
+        margin: 5px;
       }
       
 #right {
