@@ -23,7 +23,7 @@
         <fieldset class="personal">
     <legend>Personal</legend>
                 <br>
-                First Name: * <input type="text" name="fname" required pattern="[a-zA-Z'].{1,}"><br>
+                First Name: * <input type="text" name="fname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value)"><br>
                 Last Name: * <input type="text" name="lname" required pattern="[a-zA-Z'].{1,}"><br>
                 E-mail: * <input type="email" name="email" required><br>
         </fieldset>
@@ -116,4 +116,19 @@ echo "<br>";
                         xhttp.send();
                 }
         }
+
+
+        function showHint(str) {
+                if (str.length == 0) {
+                        document.getElementById("txtHint").innerHTML = "";
+                        return;
+                } else {
+                        const xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onload = function() {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+                xmlhttp.open("GET", "Unit3_get_customer_table.php?name=" + str);
+                xmlhttp.send();
+        }
+
 </script>
