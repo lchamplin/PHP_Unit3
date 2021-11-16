@@ -1,7 +1,7 @@
 <?php
 $a=[];
 // get the q parameter from URL
-$q = $_REQUEST["q"];
+$q = $_REQUEST["name"];
 
 $hint = "";
 

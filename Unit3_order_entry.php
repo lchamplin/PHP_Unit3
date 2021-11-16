@@ -117,18 +117,19 @@ echo "<br>";
                 }
         }
 
-
-        function showHint(str) {
-                if (str.length == 0) {
-                        document.getElementById("txtHint").innerHTML = "";
+        function showHint(str){
+                if(str.length==0){
+                        document.getElementById("right").innerHTML = "";
                         return;
-                } else {
+                }
+                else{
                         const xmlhttp = new XMLHttpRequest();
                         xmlhttp.onload = function() {
-                        document.getElementById("txtHint").innerHTML = this.responseText;
+                                document.getElementById("right").innerHTML = this.responseText;
+                        }
+                        xmlhttp.open("GET", "Unit3_get_customer_table.php?name="+str);
+                        xmlhttp.send();
                 }
-                xmlhttp.open("GET", "Unit3_get_customer_table.php?name=" + str);
-                xmlhttp.send();
         }
 
 </script>
