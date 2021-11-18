@@ -1,5 +1,7 @@
+
+<?php include 'Unit3_database.php';?>
 <?php
-$a=[];
+$a=mysqli_fetch_fields(getFirstNames());
 // get the q parameter from URL
 $q = $_REQUEST["name"];
 
