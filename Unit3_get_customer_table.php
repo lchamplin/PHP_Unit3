@@ -1,11 +1,20 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', True);
+
+function debug_to_console($data) {
+	$output = $data;
+	if (is_array($output))
+		$output = implode(',', $output);
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
 ?>
 <?php include 'Unit3_database.php';?>
 <?php
 $conn = getConnection()
 $a=mysqli_fetch_fields(getFirstNames($conn));
+debug_to_console($a);
 // get the q parameter from URL
 $q = $_REQUEST["name"];
 
