@@ -66,10 +66,6 @@
 
 
 
-</body>
-</html>
-
- <?php include 'Unit3_footer.php';?>
 
 <script>
 
@@ -134,3 +130,8 @@
         }
 
 </script>
+
+</body>
+</html>
+
+ <?php include 'Unit3_footer.php';?>

@@ -27,11 +27,12 @@ $stmt->close();
 
 
 echo "<table id = 'customer_table'>
-<tr>
+<thead>
 <th>First Name</th>
 <th>Last Name</th>
 <th>Email</th>
-</tr>";
+</thead>
+<tbody>";
 
 if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
@@ -40,10 +41,10 @@ if($result->num_rows > 0){
                 echo "<td>" . $row['last_name'] . "</td>";
                 echo "<td>" . $row['email'] . "</td></tr>";
         }
-        echo "</table>";
+        echo "</tbody></table>";
 }
 else{
-        echo "</table>";
+        echo "</tbody></table>";
         echo "No suggestions!";
 }
 ?>
