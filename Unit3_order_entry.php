@@ -62,13 +62,26 @@
 
 <div id='right'>
 <p>Choose an existing customer:</p>
-<table id="customer_table">
-<thead>
-<tr><th>First Name</th>
-<th>Last Name</th>
-<th>Email</th>
-</tr></thead>
-<tbody><tr><td>Mickey</td><td>Mouse</td><td>mmouse@mines.edu</td></tr></tbody></table>
+<table id="display-table" class="table-layout">
+    <thead>
+        <th>ID</th>
+        <th>Company</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>100</td>
+            <td>Abc</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Def</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Ghi</td>
+        </tr>
+    </tbody>
+</table>
 </div>
 
 
@@ -92,38 +105,36 @@
                 }
         }
 
-        function highlight_row() {
-                var table = document.getElementById("customer_table");
-                if(table){
-                        var cells = table.getElementsByTagName('td');
-                        console.log(table, cells);
-
-                        for (var i = 0; i < cells.length; i++) {
-                                // Take each cell
-                                var cell = cells[i];
-                                console.log(cell);
-                                // do something on onclick event for cell
-                                cell.onclick = function () {
-                                        console.log("cell on click called");
-                                        // Get the row id where the cell exists
-                                        var rowId = this.parentNode.rowIndex;
-
-                                        var rowsNotSelected = table.getElementsByTagName('tr');
-                                        for (var row = 0; row < rowsNotSelected.length; row++) {
-                                                rowsNotSelected[row].classList.remove('selected');
-                                        }
-                                        var rowSelected = table.getElementsByTagName('tr')[rowId];
-                                        rowSelected.className += " selected";
-
-                                        document.getElementById('fname').value = rowSelected.cells[0];
-                                        document.getElementById('lname').value = rowSelected.cells[1];
-                                        document.getElementById('email').value = rowSelected.cells[2];
-                                }
-                                console.log(cell).onclick;
-                        }
-                }
-        }
         highlight_row();
+function highlight_row() {
+    var table = document.getElementById('display-table');
+    var cells = table.getElementsByTagName('td');
+
+    for (var i = 0; i < cells.length; i++) {
+        // Take each cell
+        var cell = cells[i];
+        // do something on onclick event for cell
+        cell.onclick = function () {
+            // Get the row id where the cell exists
+            var rowId = this.parentNode.rowIndex;
+
+            var rowsNotSelected = table.getElementsByTagName('tr');
+            for (var row = 0; row < rowsNotSelected.length; row++) {
+                rowsNotSelected[row].style.backgroundColor = "";
+                rowsNotSelected[row].classList.remove('selected');
+            }
+            var rowSelected = table.getElementsByTagName('tr')[rowId];
+            rowSelected.style.backgroundColor = "yellow";
+            rowSelected.className += " selected";
+
+            msg = 'The ID of the company is: ' + rowSelected.cells[0].innerHTML;
+            msg += '\nThe cell value is: ' + this.innerHTML;
+            alert(msg);
+        }
+    }
+
+}
+      
         function showHint(str, name){
                 if(str.length==0){
                         document.getElementById("right").innerHTML = "";
