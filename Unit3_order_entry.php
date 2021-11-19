@@ -11,6 +11,7 @@
 	<meta name="author" content="Lauren Champlin">
 	<link rel="stylesheet" href="Unit3_order_entry.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="Unit3_script.js"></script>
 
 
 </head>
@@ -23,8 +24,8 @@
         <fieldset class="personal">
     <legend>Personal</legend>
                 <br>
-                First Name: * <input type="text" name="fname" id="fname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'f')"><br>
-                Last Name: * <input type="text" name="lname" id="lname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'l')"><br>
+                First Name: * <input type="text" name="fname" id="fname" required onkeyup="showHint(this.value, 'f')"><br>
+                Last Name: * <input type="text" name="lname" id="lname" required onkeyup="showHint(this.value, 'l')"><br>
                 E-mail: * <input type="email" name="email" id="email" required><br>
         </fieldset>
         </div>
@@ -46,10 +47,10 @@
                         <br>
                 Available: <input id="stock" type="text" name="stock" readonly>
                 <br>
-                Quantity: * <input type="number" name="quantity" min=1 max=100  value=1 required><br>
+                Quantity: * <input type="number" name="quantity" id="quantity" min=1 max=100  value=1 required><br>
 </fieldset>
          
-        <input type="hidden" name="timestamp" value="<?php echo time(); ?>" required>
+        <input type="hidden" name="timestamp" id="timestamp" value="<?php echo time(); ?>" required>
 </div>
 <span>
         <button id="submit" type="submit">Purchase</button>
@@ -71,6 +72,11 @@
 
 
 <script>
+
+
+
+
+
 
         function showStock(str) {
                 if(str==""){
