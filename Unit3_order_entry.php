@@ -87,6 +87,7 @@
 
         function highlight_row() {
                 var table = document.getElementById('customer_table');
+                console.log(table);
                 var cells = table.getElementsByTagName('td');
 
                 for (var i = 0; i < cells.length; i++) {
@@ -99,7 +100,6 @@
 
                                 var rowsNotSelected = table.getElementsByTagName('tr');
                                 for (var row = 0; row < rowsNotSelected.length; row++) {
-                                        rowsNotSelected[row].style.backgroundColor = "";
                                         rowsNotSelected[row].classList.remove('selected');
                                 }
                                 var rowSelected = table.getElementsByTagName('tr')[rowId];
