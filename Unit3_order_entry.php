@@ -98,6 +98,7 @@
                                 var cell = cells[i];
                                 // do something on onclick event for cell
                                 cell.onclick = function () {
+                                        console.log("cell on click called");
                                         // Get the row id where the cell exists
                                         var rowId = this.parentNode.rowIndex;
 
