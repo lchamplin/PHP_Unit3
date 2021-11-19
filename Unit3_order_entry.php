@@ -86,7 +86,7 @@
         }
 
         function highlight_row() {
-                var table = document.getElementById('customer-table');
+                var table = document.getElementById('customer_table');
                 var cells = table.getElementsByTagName('td');
 
                 for (var i = 0; i < cells.length; i++) {
