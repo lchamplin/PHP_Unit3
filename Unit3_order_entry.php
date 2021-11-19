@@ -62,7 +62,26 @@
 
 <div id='right'>
 <p>Choose an existing customer:</p>
-<table id = 'customer_table'>
+<table id="customer_table" class="table-layout">
+    <thead>
+        <th>ID</th>
+        <th>Company</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>100</td>
+            <td>Abc</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Def</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Ghi</td>
+        </tr>
+    </tbody>
+</table>
 </table>
 </div>
 
