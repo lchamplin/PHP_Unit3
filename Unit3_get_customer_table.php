@@ -19,7 +19,7 @@ if ($name=="f"){
 }
 
 $cust = $cust . "%";
-$stmt = $conn->prepare($query);
+$stmt = $conn->prepare($q);
 $stmt->bind_param("s", $cust);
 $stmt->execute();
 $result = $stmt->get_result();
