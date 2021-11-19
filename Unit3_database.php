@@ -12,17 +12,6 @@ die("Connection failed: " . $conn->connect_error);
 return $conn;
 }
 
-function getCustomers($conn){
-$sql = "SELECT * FROM Customer";
-$result = mysqli_query($conn, $sql);
-return $result;
-}
-
-function getFirstNames($conn){
-$sql = "SELECT first_name FROM Customer";
-$result = mysqli_query($conn, $sql);
-return $result;
-}
 
 function getProducts($conn){
 $sql = "SELECT * FROM Product";

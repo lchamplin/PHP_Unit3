@@ -23,8 +23,8 @@
         <fieldset class="personal">
     <legend>Personal</legend>
                 <br>
-                First Name: * <input type="text" name="fname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value)"><br>
-                Last Name: * <input type="text" name="lname" required pattern="[a-zA-Z'].{1,}"><br>
+                First Name: * <input type="text" name="fname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'f')"><br>
+                Last Name: * <input type="text" name="lname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'l')"><br>
                 E-mail: * <input type="email" name="email" required><br>
         </fieldset>
         </div>
@@ -61,35 +61,7 @@
 </div>
 
 <div id='right'>
-<?php
-$conn = getConnection();
-$customers = getCustomerTable($conn);
-$orders = getOrdersTable($conn);
-$products = getProductTable($conn);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<h3> Customers </h3>";
-echo "<table border='1'>
-<tr>
-<th>First name</th>
-<th>Last name</th>
-<th>Email</th>
-</tr>";
-
-while($row = mysqli_fetch_array($customers))
-{
-echo "<tr>";
-echo "<td>" . $row['first_name'] . "</td>";
-echo "<td>" . $row['last_name'] . "</td>";
-echo "<td>" . $row['email'] . "</td>";
-echo "</tr>";
-}
-echo "</table>";
-
-echo "<br>";
-?>
+<p>Choose an existing customer:</p>
 </div>
 
 
@@ -117,7 +89,7 @@ echo "<br>";
                 }
         }
 
-        function showHint(str){
+        function showHint(str, name){
                 if(str.length==0){
                         document.getElementById("right").innerHTML = "";
                         return;
@@ -127,7 +99,7 @@ echo "<br>";
                         xmlhttp.onload = function() {
                                 document.getElementById("right").innerHTML = this.responseText;
                         }
-                        xmlhttp.open("GET", "Unit3_get_customer_table.php?name="+str);
+                        xmlhttp.open("GET", "Unit3_get_customer_table.php?name="+str+"&&n="+name);
                         xmlhttp.send();
                 }
         }

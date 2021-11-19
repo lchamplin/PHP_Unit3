@@ -1,40 +1,49 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', True);
-
-function debug_to_console($data) {
-	$output = $data;
-	if (is_array($output))
-		$output = implode(',', $output);
-	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
-
 ?>
 <?php include 'Unit3_database.php';?>
 <?php
-$conn = getConnection()
-$a=mysqli_fetch_fields(getFirstNames($conn));
-debug_to_console($a);
+$conn = getConnection();
+
 // get the q parameter from URL
-$q = $_REQUEST["name"];
+$cust = $_REQUEST["name"];
+$name = $_REQUEST["n"];
 
-$hint = "";
+$q = "select * from Customer where ";
 
-// lookup all hints from array if $q is different from ""
-if ($q !== "") {
-  $q = strtolower($q);
-  $len=strlen($q);
-  foreach($a as $name) {
-    if (stristr($q, substr($name, 0, $len))) {
-      if ($hint === "") {
-        $hint = $name;
-      } else {
-        $hint .= ", $name";
-      }
-    }
-  }
+if ($name=="f"){
+        $q = $q . "first_name like ?";
+}else{
+        $q = $q . "last_name like ?";
 }
 
-// Output "no suggestion" if no hint was found or output correct values
-echo $hint === "" ? "no suggestion" : $hint;
+$cust = $cust . "%";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $cust);
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
+
+
+echo "<table id = 'customer_table'>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+</tr>";
+
+if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
+                echo"<tr><td>";
+                echo $row['first_name'] . "</td>";
+                echo "<td>" . $row['last_name'] . "</td>";
+                echo "<td>" . $row['email'] . "</td></tr>";
+        }
+        echo "</table>";
+}
+else{
+        echo "</table>";
+        echo "No suggestions!";
+}
 ?>
