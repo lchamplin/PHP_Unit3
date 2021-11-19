@@ -26,7 +26,7 @@ $result = $stmt->get_result();
 $stmt->close();
 
 
-echo "<table id = 'customer_table'>
+echo "<table id = 'display-table'>
 <thead>
 <th>First Name</th>
 <th>Last Name</th>
