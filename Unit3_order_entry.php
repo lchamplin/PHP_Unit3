@@ -88,11 +88,10 @@
         }
 
         function highlight_row() {
-                console.log("highlight row called");
                 var table = document.getElementById("customer_table");
                 if(table){
                         var cells = table.getElementsByTagName('td');
-                        console.log(cells);
+                        console.log(table, cells);
 
                         for (var i = 0; i < cells.length; i++) {
                                 // Take each cell
@@ -119,7 +118,6 @@
         }
 
         function showHint(str, name){
-                console.log("showHint called");
                 if(str.length==0){
                         document.getElementById("right").innerHTML = "";
                         return;
