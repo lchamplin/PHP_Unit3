@@ -130,6 +130,7 @@
                         xmlhttp.open("GET", "Unit3_get_customer_table.php?name="+str+"&&n="+name);
                         xmlhttp.send();
                 }
+                highlight_row();
         }
 
 </script>
