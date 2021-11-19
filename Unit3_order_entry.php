@@ -114,6 +114,7 @@
                                         document.getElementById('lname').value = rowSelected.cells[1];
                                         document.getElementById('email').value = rowSelected.cells[2];
                                 }
+                                console.log(cell).onclick;
                         }
                 }
         }
