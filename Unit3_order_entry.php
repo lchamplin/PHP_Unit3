@@ -62,6 +62,8 @@
 
 <div id='right'>
 <p>Choose an existing customer:</p>
+<table id = 'customer_table'>
+</table>
 </div>
 
 
@@ -86,7 +88,7 @@
         }
 
         function highlight_row() {
-                var table = document.getElementById('customer_table');
+                var table = document.getElementById("customer_table");
                 console.log(table);
                 var cells = table.getElementsByTagName('td');
 
