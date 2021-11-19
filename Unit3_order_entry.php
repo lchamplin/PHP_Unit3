@@ -111,9 +111,13 @@ function highlight_row() {
             rowSelected.style.backgroundColor = "yellow";
             rowSelected.className += " selected";
 
-            msg = 'The ID of the company is: ' + rowSelected.cells[0].innerHTML;
-            msg += '\nThe cell value is: ' + this.innerHTML;
-            alert(msg);
+        //     msg = 'The ID of the company is: ' + rowSelected.cells[0].innerHTML;
+        //     msg += '\nThe cell value is: ' + this.innerHTML;
+        //     alert(msg);
+
+            document.getElementById("fname").value = rowSelected.cells[0];
+            document.getElementById("lname").value = rowSelected.cells[1];
+            document.getElementById("email").value = rowSelected.cells[2];
         }
     }
 
