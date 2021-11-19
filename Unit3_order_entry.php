@@ -96,6 +96,7 @@
                         for (var i = 0; i < cells.length; i++) {
                                 // Take each cell
                                 var cell = cells[i];
+                                console.log(cell);
                                 // do something on onclick event for cell
                                 cell.onclick = function () {
                                         console.log("cell on click called");
