@@ -17,6 +17,11 @@ fieldset.personal, fieldset.product{
 }
 
 
+.selected {
+        color: red;
+        background-color: yellow;
+}
+
 legend {
         background-color: red;
         color: blue;

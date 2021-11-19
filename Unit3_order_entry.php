@@ -23,9 +23,9 @@
         <fieldset class="personal">
     <legend>Personal</legend>
                 <br>
-                First Name: * <input type="text" name="fname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'f')"><br>
-                Last Name: * <input type="text" name="lname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'l')"><br>
-                E-mail: * <input type="email" name="email" required><br>
+                First Name: * <input type="text" name="fname" id="fname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'f')"><br>
+                Last Name: * <input type="text" name="lname" id="lname" required pattern="[a-zA-Z'].{1,}" onkeyup="showHint(this.value, 'l')"><br>
+                E-mail: * <input type="email" name="email" id="email" required><br>
         </fieldset>
         </div>
 
@@ -87,6 +87,34 @@
                         xhttp.open("GET", "Unit3_get_quantity.php?id="+str, true);
                         xhttp.send();
                 }
+        }
+
+        function highlight_row() {
+                var table = document.getElementById('customer-table');
+                var cells = table.getElementsByTagName('td');
+
+                for (var i = 0; i < cells.length; i++) {
+                        // Take each cell
+                        var cell = cells[i];
+                        // do something on onclick event for cell
+                        cell.onclick = function () {
+                                // Get the row id where the cell exists
+                                var rowId = this.parentNode.rowIndex;
+
+                                var rowsNotSelected = table.getElementsByTagName('tr');
+                                for (var row = 0; row < rowsNotSelected.length; row++) {
+                                        rowsNotSelected[row].style.backgroundColor = "";
+                                        rowsNotSelected[row].classList.remove('selected');
+                                }
+                                var rowSelected = table.getElementsByTagName('tr')[rowId];
+                                rowSelected.className += " selected";
+
+                                document.getElementById('fname').value = rowSelected.cells[0];
+                                document.getElementById('lname').value = rowSelected.cells[1];
+                                document.getElementById('email').value = rowSelected.cells[2];
+                        }
+                }
+
         }
 
         function showHint(str, name){
