@@ -115,9 +115,9 @@ function highlight_row() {
         //     msg += '\nThe cell value is: ' + this.innerHTML;
         //     alert(msg);
 
-            document.getElementById("fname").value = rowSelected.cells[0];
-            document.getElementById("lname").value = rowSelected.cells[1];
-            document.getElementById("email").value = rowSelected.cells[2];
+            document.getElementById("fname").value = rowSelected.cells[0].innerHTML;
+            document.getElementById("lname").value = rowSelected.cells[1].innerHTML;
+            document.getElementById("email").value = rowSelected.cells[2].innerHTML;
         }
     }
 
