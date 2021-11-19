@@ -137,7 +137,7 @@
                         }
                 }
         }
-
+        highlight_row();
         function showHint(str, name){
                 if(str.length==0){
                         document.getElementById("right").innerHTML = "";
