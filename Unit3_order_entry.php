@@ -106,6 +106,7 @@
         }
 
         highlight_row();
+
 function highlight_row() {
     var table = document.getElementById('display-table');
     var cells = table.getElementsByTagName('td');
@@ -144,10 +145,10 @@ function highlight_row() {
                         const xmlhttp = new XMLHttpRequest();
                         xmlhttp.onload = function() {
                                 document.getElementById("right").innerHTML = this.responseText;
+                                highlight_row();
                         }
                         xmlhttp.open("GET", "Unit3_get_customer_table.php?name="+str+"&&n="+name);
                         xmlhttp.send();
-                        highlight_row();
                 }
         }
 
