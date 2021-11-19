@@ -92,6 +92,7 @@
                 var table = document.getElementById("customer_table");
                 if(table){
                         var cells = table.getElementsByTagName('td');
+                        console.log(cells);
 
                         for (var i = 0; i < cells.length; i++) {
                                 // Take each cell
