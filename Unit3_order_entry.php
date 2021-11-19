@@ -88,8 +88,8 @@
         }
 
         function highlight_row() {
+                console.log("highlight row called");
                 var table = document.getElementById("customer_table");
-                console.log(table);
                 var cells = table.getElementsByTagName('td');
 
                 for (var i = 0; i < cells.length; i++) {
@@ -116,6 +116,7 @@
         }
 
         function showHint(str, name){
+                console.log("showHint called");
                 if(str.length==0){
                         document.getElementById("right").innerHTML = "";
                         return;
@@ -127,8 +128,8 @@
                         }
                         xmlhttp.open("GET", "Unit3_get_customer_table.php?name="+str+"&&n="+name);
                         xmlhttp.send();
+                        highlight_row();
                 }
-                highlight_row();
         }
 
 </script>
