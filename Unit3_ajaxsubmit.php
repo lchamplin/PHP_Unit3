@@ -1,8 +1,9 @@
 <?php
-include 'Unit3_database.php'; 
-
 error_reporting(E_ALL);
 ini_set('display_errors', True);
+?>
+<?php include 'Unit3_database.php';?>
+<?php
 $conn = getConnection();
 
 
