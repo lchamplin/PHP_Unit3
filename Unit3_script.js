@@ -12,14 +12,25 @@ $(document).ready(function(){
         // Returns successful data submission message when the entered information is stored in database.
         var dataString = 'fname1='+ fname + '&lname1='+ lname +'&email1='+ email + '&product1='+ product + '&quantity1='+ quantity + '&timestamp1='+ timestamp;
         console.log(dataString);
-        if(fname==''||lname==''||email==''||product==null||quantity==''||timestamp=='')
+        if(fname==''||lname==''||email==''||product==null||quantity==null||timestamp=='')
         {
                 if(fname==''||lname==''||email==''){
                         alert("Please Fill All Fields");
+                        return false;
                 }
                 if(product==null){
                         alert("Please select a product");
+                        return false;
                 }
+                if(quantity==null){
+                        alert("Please select a quantity");
+                        return false;
+                }
+	
+		if (in_stock < quantity) {
+			alert("Quantity entered (" + quantity + ") is greater than in stock (" + in_stock + ")");
+			return false;
+		}
         }
         else
         {
