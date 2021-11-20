@@ -8,7 +8,7 @@ $conn = getConnection();
 function processOrder(){
 //Fetching Values from URL
 $fname2=$_POST['fname1'];
-$lname2=$_POST['lname2'];
+$lname2=$_POST['lname1'];
 $email2=$_POST['email1'];
 $product2=$_POST['product1'];
 $quantity2=$_POST['quantity1'];
