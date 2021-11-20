@@ -74,11 +74,6 @@
 
 <script>
 
-
-
-
-
-
         function showStock(str) {
                 if(str==""){
                         return;

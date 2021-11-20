@@ -1,6 +1,7 @@
         
 $(document).ready(function(){
         $("#submit").click(function(){
+                console.log("submit");
         e.preventDefault();
         var fname = $("#fname").val();
         var lname = $("#lname").val();
