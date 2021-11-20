@@ -5,6 +5,7 @@ ini_set('display_errors', True);
 <?php include 'Unit3_database.php';?>
 <?php
 $conn = getConnection();
+echo $conn;
 
 
 function processOrder(){
