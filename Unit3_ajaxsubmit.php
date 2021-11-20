@@ -37,7 +37,7 @@ if ($newCust != 0) {
 else{
 	addCustomer($conn, $fname2, $lname2, $email2);
 	$cust = findCustomer($conn, $email2);
-	addOrder($conn, $cust['id'], $product2, $quantity2, $price, $tax, $donation, $total, $timestamp);
+	addOrder($conn, $cust['id'], $product2, $quantity2, $price, $tax, $donation, $total, $timestamp2);
 }
 return "Order entered successfully";
 }

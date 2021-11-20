@@ -34,8 +34,7 @@ $(document).ready(function(){
         }
         });
         }
-        alert("error");
-        return false;
+        
         });
         });
         
