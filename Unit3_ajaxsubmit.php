@@ -4,7 +4,7 @@ include 'Unit3_database.php';
 $conn = getConnection();
 
 
-function processOrder(){
+function processOrder($conn){
 //Fetching Values from URL
 $fname2=$_POST['fname1'];
 $lname2=$_POST['lname1'];
