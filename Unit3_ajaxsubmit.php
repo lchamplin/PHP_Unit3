@@ -14,7 +14,7 @@ $quantity2=$_POST['quantity1'];
 $timestamp2=$_POST['timestamp1'];
 
 //Insert query
-// $newCust = findCustomer($conn, $email2);
+$newCust = findCustomer($conn, $email2);
 $product = findProductById($conn, $product2);
 $product_name = $product['product_name'];
 $price = $product['price'];
