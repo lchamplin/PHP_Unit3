@@ -17,7 +17,8 @@
 </head>
 <body>
 <div id='left'>
-<form action="Unit3_process_order.php" method="post">
+<!-- <form action="Unit3_process_order.php" method="post"> -->
+<form>
         <span>
         <br>
         <div class="personal">
@@ -53,7 +54,7 @@
         <input type="hidden" name="timestamp" id="timestamp" value="<?php echo time(); ?>" required>
 </div>
 <span>
-        <button id="submit" type="submit">Purchase</button>
+        <button id="submit" type="submit">Submit</button>
         <button id="clear" type="reset">Clear Fields</button>
 </span>
 </span>
