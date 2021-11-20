@@ -25,14 +25,11 @@ $total = $tax_price;
 $donation = 0.0;
 
 $newQty = $product['in_stock'] - $quantity2;
-if ($newQty < 0) { // ensure no negative amounts
-        return "Invalid quantity";
-}
 
 updateQuantity($conn, $product2, $newQty);
 
 if ($newCust != 0) {
-	addOrder($conn, $newCust['id'], $product2, $quantity2, $price, $tax, $donation, $total, $timestamp);
+	addOrder($conn, $newCust['id'], $product2, $quantity2, $price, $tax, $donation, $total, $timestamp2);
 }
 else{
 	addCustomer($conn, $fname2, $lname2, $email2);
