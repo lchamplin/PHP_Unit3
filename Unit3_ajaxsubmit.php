@@ -41,6 +41,6 @@ else{
 }
 return "Order entered successfully";
 }
-echo processOrder();
+echo processOrder($conn);
 ?>
 
