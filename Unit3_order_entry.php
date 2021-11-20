@@ -11,7 +11,6 @@
 	<meta name="author" content="Lauren Champlin">
 	<link rel="stylesheet" href="Unit3_order_entry.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="Unit3_script.js"></script>
 
 
 </head>
@@ -71,6 +70,7 @@
 
 
 
+<script src="Unit3_script.js"></script>
 
 <script>
 
