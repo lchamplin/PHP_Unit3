@@ -54,7 +54,7 @@
         <input type="hidden" name="timestamp" id="timestamp" value="<?php echo time(); ?>" required>
 </div>
 <span>
-        <button id="submit" type="submit" onclick="submit()">Submit</button>
+        <button id="submit" type="submit">Submit</button>
         <button id="clear" type="reset">Clear Fields</button>
 </span>
 </span>
@@ -73,38 +73,6 @@
 
 
 <script>
-function submit(){
-        console.log("submit");
-        e.preventDefault();
-        var fname = $("#fname").val();
-        var lname = $("#lname").val();
-        var email = $("#email").val();
-        var product = $("#product").val();
-        var quantity = $("#quantity").val();
-        var timestamp = $("#timestamp").val();
-        // Returns successful data submission message when the entered information is stored in database.
-        var dataString = 'fname1='+ fname + 'lname1='+ lname +'&email1='+ email + '&product1='+ product + '&quantity1='+ quantity + '&timestamp1='+ timestamp;
-        if(fname==''||lname==''||email==''||product==''||quantity==''||timestamp=='')
-        {
-        alert("Please Fill All Fields");
-        }
-        else
-        {
-        // AJAX Code To Submit Form.
-        $.ajax({
-        type: "POST",
-        url: "Unit3_ajaxsubmit.php",
-        data: dataString,
-        cache: false,
-        success: function(result){
-        alert(result);
-        }
-        });
-        }
-        alert("error");
-        return false;
-        }
-  
         
         
         function showStock(str) {
