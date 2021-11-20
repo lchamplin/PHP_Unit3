@@ -25,6 +25,9 @@ $total = $tax_price;
 $donation = 0.0;
 
 $newQty = $product['in_stock'] - $quantity2;
+if ($newQty < 0) { // ensure no negative amounts
+        return "Invalid quantity";
+}
 
 updateQuantity($conn, $product2, $newQty);
 

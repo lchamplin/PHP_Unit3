@@ -27,10 +27,7 @@ $(document).ready(function(){
                         return false;
                 }
         }
-		if (in_stock < quantity) {
-			alert("Quantity entered (" + quantity + ") is greater than in stock (" + in_stock + ")");
-			return false;
-		}
+		
         else
         {
         // AJAX Code To Submit Form.
